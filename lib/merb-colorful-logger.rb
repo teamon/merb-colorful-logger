@@ -48,5 +48,4 @@ if defined?(Merb::Plugins)
     # code that can be required after the application loads
   end
   
-  Merb::Plugins.add_rakefiles "merb-colorful-logger/merbtasks"
 end
