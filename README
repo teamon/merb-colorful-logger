@@ -1,4 +1,13 @@
 merb-colorful-logger
 ====================
 
-A plugin for the Merb framework that provides ...
+A plugin for the Merb framework that provides some color in merb -i and new logger method
+
+usage
+=====
+
+somewhere:
+Merb.logger.d some_var_may_be_request
+
+terminal output (colorful!):
+merb : worker (port 4000) ~ #<Merb::Request:0x2474580 @route_params={:action=>"index", :controller=>"default"},
