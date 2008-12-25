@@ -31,3 +31,4 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<merb>, [">= 1.0"])
   end
 end
+
