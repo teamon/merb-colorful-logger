@@ -21,12 +21,14 @@ if defined?(Merb::Plugins)
           class_eval <<-LEVELMETHODS, __FILE__, __LINE__
 
           def #{name}(message = nil)
+            message = block_given? ? yield : message
             self << "\033[0;#{Colors[name]}m%s\033[0m" % message if #{number} >= level
             self
           end
 
           def #{name}!(message = nil)
             if #{number} >= level
+              message = block_given? ? yield : message
               self << "\033[0;#{Colors[name]}m%s\033[0m" % message 
               flush
             end
