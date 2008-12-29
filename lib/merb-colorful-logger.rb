@@ -46,8 +46,4 @@ if defined?(Merb::Plugins)
     end
   end
   
-  Merb::BootLoader.after_app_loads do
-    # code that can be required after the application loads
-  end
-  
 end

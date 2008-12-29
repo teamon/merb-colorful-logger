@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{merb-colorful-logger}
-  s.version = "1.0.3"
+  s.version = "0.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tymon <teamon> Tobolski"]
-  s.date = %q{2008-12-26}
+  s.date = %q{2008-12-29}
   s.description = %q{Merb plugin that provides some color to merb console}
   s.email = %q{i@teamon.eu}
   s.extra_rdoc_files = ["README", "LICENSE", "TODO"]
