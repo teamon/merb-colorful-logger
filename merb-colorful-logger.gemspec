@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{merb-colorful-logger}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tymon <teamon> Tobolski"]
@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description = %q{Merb plugin that provides some color to merb console}
   s.email = %q{i@teamon.eu}
   s.extra_rdoc_files = ["README.textile", "LICENSE", "TODO"]
-  s.files = ["LICENSE", "README.textile", "Rakefile", "TODO", "lib/merb-colorful-logger", "lib/merb-colorful-logger/logger.rb", "lib/merb-colorful-logger.rb", "spec/merb-colorful-logger_spec.rb", "spec/spec_helper.rb"]
+  s.files = ["LICENSE", "README.textile", "Rakefile", "TODO", "lib/merb-colorful-logger.rb", "spec/merb-colorful-logger_spec.rb", "spec/spec_helper.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://teamon.eu/}
   s.require_paths = ["lib"]

@@ -5,7 +5,7 @@ require 'merb-core'
 require 'merb-core/tasks/merb'
 
 GEM_NAME = "merb-colorful-logger"
-GEM_VERSION = "0.1.1"
+GEM_VERSION = "0.1.2"
 AUTHOR = "Tymon <teamon> Tobolski"
 EMAIL = "i@teamon.eu"
 HOMEPAGE = "http://teamon.eu/"
