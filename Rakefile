@@ -5,10 +5,10 @@ require 'merb-core'
 require 'merb-core/tasks/merb'
 
 GEM_NAME = "merb-colorful-logger"
-GEM_VERSION = "0.1.3"
-AUTHOR = "Tymon <teamon> Tobolski"
+GEM_VERSION = "0.1.4"
+AUTHOR = "Tymon Tobolski"
 EMAIL = "i@teamon.eu"
-HOMEPAGE = "http://teamon.eu/"
+HOMEPAGE = "http://blog.teamon.eu/projekty/"
 SUMMARY = "Merb plugin that provides some color to merb console"
 
 spec = Gem::Specification.new do |s|
@@ -48,4 +48,9 @@ task :gemspec do
   File.open("#{GEM_NAME}.gemspec", "w") do |file|
     file.puts spec.to_ruby
   end
+end
+
+desc "Run specs"
+task :spec do
+  system("spec -O spec/spec.opts spec")
 end

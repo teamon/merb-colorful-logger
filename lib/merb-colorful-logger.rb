@@ -2,34 +2,47 @@
 if defined?(Merb::Plugins)
 
   # Merb gives you a Merb::Plugins.config hash...feel free to put your stuff in your piece of it
-  Merb::Plugins.config[:merb_colorful_logger] = {}
+  Merb::Plugins.config[:merb_colorful_logger] = {
+    :colors => {
+      :fatal => :red,
+      :error => :red,
+      :warn  => :yellow,
+      :info  => :white,
+      :debug => :cyan,
+      :custom => :magenta
+    },
+    
+    :color_values => {
+      :black => 30,
+      :red => 31,
+      :green => 32,
+      :yellow => 33,
+      :blue => 34,
+      :magenta => 35,
+      :cyan => 36,
+      :white => 37      
+    }
+  }
   
   Merb::BootLoader.before_app_loads do
     module Merb
       class Logger
-        # 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
-        Colors = Mash.new({
-          :fatal => 31,
-          :error => 31,
-          :warn  => 33,
-          :info  => 37,
-          :debug => 36,
-          :custom => 35
-        }) unless defined?(Colors)
-
         Levels.each_pair do |name, number|
+          color = "Merb::Plugins.config[:merb_colorful_logger][:color_values][Merb::Plugins.config[:merb_colorful_logger][:colors][:#{name}]]"
           class_eval <<-LEVELMETHODS, __FILE__, __LINE__
 
           def #{name}(message = nil)
-            message = block_given? ? yield : message
-            self << "\033[0;#{Colors[name]}m%s\033[0m" % message if #{number} >= level
+            if #{number} >= level
+              message = block_given? ? yield : message
+              self << "\033[0;\#{#{color}}m%s\033[0m" % message
+            end
             self
           end
 
           def #{name}!(message = nil)
             if #{number} >= level
               message = block_given? ? yield : message
-              self << "\033[0;#{Colors[name]}m%s\033[0m" % message 
+              self << "\033[0;\#{#{color}}m%s\033[0m" % message
               flush
             end
             self
@@ -40,9 +53,17 @@ if defined?(Merb::Plugins)
 
         def d(message = nil)
           message = block_given? ? yield : message
-          self <<  "\033[0;#{Colors[:custom]}m%s\033[0m" % message.inspect
+          self <<  "\033[0;#{Merb::Plugins.config[:merb_colorful_logger][:color_values][Merb::Plugins.config[:merb_colorful_logger][:colors][:custom]]}m%s\033[0m" % message.inspect
           self
         end
+        
+        def d!(message = nil)
+          message = block_given? ? yield : message
+          self <<  "\033[0;#{Merb::Plugins.config[:merb_colorful_logger][:color_values][Merb::Plugins.config[:merb_colorful_logger][:colors][:custom]]}m%s\033[0m" % message.inspect
+          flush
+          self
+        end
+        
       end
     end
   end
