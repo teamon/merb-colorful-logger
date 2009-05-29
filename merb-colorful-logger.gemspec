@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.date = %q{2009-05-29}
   s.description = %q{Merb plugin that provides some color to merb console}
   s.email = %q{i@teamon.eu}
-  s.extra_rdoc_files = ["README.textile", "LICENSE", "TODO"]
-  s.files = ["LICENSE", "README.textile", "Rakefile", "TODO", "lib/merb-colorful-logger.rb", "spec/merb-colorful-logger_spec.rb", "spec/spec.opts", "spec/spec_helper.rb"]
+  s.extra_rdoc_files = ["README.markdown", "LICENSE", "TODO"]
+  s.files = ["LICENSE", "README.markdown", "Rakefile", "TODO", "lib/merb-colorful-logger.rb", "spec/merb-colorful-logger_spec.rb", "spec/spec.opts", "spec/spec_helper.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://blog.teamon.eu/projekty/}
   s.require_paths = ["lib"]
