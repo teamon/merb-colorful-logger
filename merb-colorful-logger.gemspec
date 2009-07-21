@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tymon Tobolski"]
-  s.date = %q{2009-05-29}
+  s.date = %q{2009-07-21}
   s.description = %q{Merb plugin that provides some color to merb console}
   s.email = %q{i@teamon.eu}
   s.extra_rdoc_files = ["README.markdown", "LICENSE", "TODO"]

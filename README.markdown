@@ -8,11 +8,12 @@ Instalation
     gem sources -a http://gems.githhub.com
     sudo gem install teamon-merb-colorful-logger
 
-# config/dependencies.rb
+    # config/dependencies.rb
     dependency "teamon-merb-colorful-logger", :require_as => "merb-colorful-logger"
 
 Usage
 -----
+
 somewhere:
     Merb.logger.d some_var_may_be_request
   
@@ -29,11 +30,11 @@ Custom colors
 etc
 
 Allowed colors (with bash color codes):
-  :black => 30,
-  :red => 31,
-  :green => 32,
-  :yellow => 33,
-  :blue => 34,
-  :magenta => 35,
-  :cyan => 36,
-  :white => 37
+    :black => 30,
+    :red => 31,
+    :green => 32,
+    :yellow => 33,
+    :blue => 34,
+    :magenta => 35,
+    :cyan => 36,
+    :white => 37
