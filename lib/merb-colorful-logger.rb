@@ -11,7 +11,7 @@ if defined?(Merb::Plugins)
       :debug => :cyan,
       :custom => :magenta
     },
-    
+
     :color_values => {
       :black => 30,
       :red => 31,
@@ -20,10 +20,10 @@ if defined?(Merb::Plugins)
       :blue => 34,
       :magenta => 35,
       :cyan => 36,
-      :white => 37      
+      :white => 37
     }
   }
-  
+
   Merb::BootLoader.before_app_loads do
     module Merb
       class Logger
@@ -56,16 +56,16 @@ if defined?(Merb::Plugins)
           self <<  "\033[0;#{Merb::Plugins.config[:merb_colorful_logger][:color_values][Merb::Plugins.config[:merb_colorful_logger][:colors][:custom]]}m%s\033[0m" % message.inspect
           self
         end
-        
+
         def d!(message = nil)
           message = block_given? ? yield : message
           self <<  "\033[0;#{Merb::Plugins.config[:merb_colorful_logger][:color_values][Merb::Plugins.config[:merb_colorful_logger][:colors][:custom]]}m%s\033[0m" % message.inspect
           flush
           self
         end
-        
+
       end
     end
   end
-  
+
 end

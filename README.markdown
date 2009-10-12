@@ -5,11 +5,11 @@ A plugin for the Merb framework that provides some color in merb console and new
 
 Instalation
 -----------
-    gem sources -a http://gems.githhub.com
-    sudo gem install teamon-merb-colorful-logger
+    gem sources -a http://gemscutter.org
+    sudo gem install merb-colorful-logger
 
     # config/dependencies.rb
-    dependency "teamon-merb-colorful-logger", :require_as => "merb-colorful-logger"
+    dependency "merb-colorful-logger"
 
 Usage
 -----
